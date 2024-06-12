@@ -36,8 +36,7 @@ while True:
     2. Simple loading bar (in external window)
     3. Simple loading bar (in console)
     4. Loading message with blinking cursor
-    5. Coloured loading bar using ANSI Escape Sequences (limited compatibility)
-    6. Coloured loading bar using Rich Text""")
+    5. Coloured loading bar using ANSI Escape Sequences (limited compatibility)""")
 
   choice = int(input("Pick one (the corresponding number): "))
 
