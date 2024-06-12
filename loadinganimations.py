@@ -17,10 +17,19 @@ def loading_animation(): #for option 2
     current_slice = (current_slice + 1) % 101
 
     root.after(20, loading_animation)
+
+def loading_bar(current, total, bar_length=20):
+  filled_length = int(round(bar_length * (current / total)))
+  bar = '█' * filled_length + '-' * (bar_length - filled_length)
+  print(f'Loading: [{bar}] {current}/{total} ({int(current / total * 100)}%)', end='\r')
+
+
+
 while True:
   print("""Loading animation options:
     1. Simple
-    2. Basic graphical""")
+    2. Simple loading bar (in external window)
+    3. Simple loading bar (in console)""")
 
   choice = int(input("Pick one (the corresponding number): "))
 
@@ -48,3 +57,10 @@ while True:
 
       loading_animation()
       root.mainloop()
+
+  if choice == 3:
+      for i in range(101):
+          loading_bar(i, 100)
+          time.sleep(0.05)
+
+      print("\nDone")
